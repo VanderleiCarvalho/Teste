@@ -1,0 +1,60 @@
+<? xml versão = " 1.0 " encoding = " UTF-8 " ?>
+<! - Você pode editar livremente este arquivo. Veja abaixo para blocos comentadas ->
+<! - Alguns exemplos de como personalizar a compilação. ->
+<! - (Se você apagá-lo e reabrir o projeto ele será recriado.) ->
+<! - Por padrão, apenas a limpar e criar comandos usar este script de construção. ->
+<! - Os comandos tais como Run, Debug, e teste só usa esta compilação script se ->
+<! - O recurso Compilar ao salvar está desligado para o projeto. ->
+<! - Você pode desligar o Compilar ao salvar (ou Implantar ao salvar) definindo ->
+<! - Na caixa de diálogo Propriedades do projeto do projeto .-->
+< projecto  nome = " GIT "  default = " default "  basedir = " . " >
+    < descrição > Builds, testes, e corre o GIT projeto. </ description >
+    < importação  arquivo = " nbproject / build-impl.xml " />
+    <! -
+    Existem várias metas que são, por padrão vazio e que pode ser 
+    utilizado para a execução de suas tarefas. Estas metas são geralmente executados
+    antes e depois de alguns alvos principais. Eles são:
+      -pre-init: chamado antes da inicialização de propriedades do projeto
+      -pós-init: chamado após a inicialização de propriedades do projeto
+      -pre-compilação: chamado antes javac compilação
+      -pós-compilação: javac chamado após a compilação
+      -pre-compilar-single: chamado antes javac compilação de arquivo único
+      -post-compile-single: chamado após javac compilação de arquivo único
+      -pre-compile-teste: chamado antes javac compilação de testes JUnit
+      -post-compile-teste: chamado após javac compilação de testes JUnit
+      -pre-compilar-teste simples: chamado antes javac compilação de teste JUnit único
+      -post-compile-teste simples: chamado após javac compilação de teste JUunit único
+      -pre-jar: chamado antes edifício JAR
+      -pós-jar: chamado após a construção JAR
+      -pós-clean: chamado após a limpeza construir produtos
+    (Metas começam com '-' não se destinam a ser chamado por conta própria.)
+    Exemplo de inserção de um ofuscador após a compilação poderia ter esta aparência:
+        <Target name = "- pós-compilação">
+            <Ofuscação>
+                <Fileset dir = "$ {build.classes.dir}" />
+            </ Ofuscação>
+        </ Target>
+    Para a lista de propriedades disponíveis verifique o importado 
+    nbproject / build-impl.xml arquivo. 
+    Outra maneira de personalizar a construção é, substituindo os principais alvos existentes.
+    Os alvos de interesse são: 
+      -init-macrodef-javac: define macro para javac compilação
+      -init-macrodef-junit: define macro para execução junit
+      -init-macrodef-debug: define macro para a classe de depuração
+      -init-macrodef-java: define macro para execução classe
+      -do-jar: Edifício JAR
+      executar: execução de projeto 
+      -javadoc-build: geração de Javadoc
+      test-relatório: JUnit geração de relatório
+    Um exemplo de substituindo a meta para a execução do projeto poderia ser semelhante a este:
+        <Meta name = "run" depende = "GIT-impl.jar">
+            <Exec dir = "bin" executável = "launcher.exe">
+                <Arg file = "$ {dist.jar}" />
+            </ Exec>
+        </ Target>
+    Observe que o alvo substituído depende do alvo frasco e não apenas em 
+    o alvo de compilação como alvo regular de corrida faz. Mais uma vez, para uma lista de disponíveis
+    propriedades que você pode usar, verifique o alvo que você está substituindo na
+    nbproject / build-impl.xml arquivo. 
+    ->
+</ projecto >
